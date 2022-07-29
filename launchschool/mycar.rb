@@ -6,6 +6,9 @@ the car to speed up, brake, and shut the car off.
 
 Add an accessor method to your MyCar class to change and view the color of your car. Then add an accessor method that
 allows you to view, but not modify, the year of your car.
+
+You want to create a nice interface that allows you to accurately describe the action you want your program to perform. 
+Create a method called spray_paint that can be called on an object and will modify the color of the car.
 =end
 
 
@@ -35,6 +38,11 @@ class MyCar
   def current_speed
     puts "You are now going #{@speed} km/h."
   end
+
+  def spray_paint(color)
+    self.color = color
+  end
+
 end
 
 lumina = MyCar.new(1997, 'white', 'chevy lumina')
@@ -51,3 +59,5 @@ lumina.current_speed
 lumina.color = 'black'
 puts lumina.color
 puts lumina.year
+lumina.spray_paint('red')
+puts lumina.color
