@@ -3,11 +3,15 @@ Create a class called MyCar. When you initialize a new instance or object of the
 instance variables that tell us the year, color, and model of the car. Create an instance variable that is set to 0 
 during instantiation of the object to track the current speed of the car as well. Create instance methods that allow 
 the car to speed up, brake, and shut the car off.
-    
+
+Add an accessor method to your MyCar class to change and view the color of your car. Then add an accessor method that
+allows you to view, but not modify, the year of your car.
 =end
 
 
 class MyCar
+  attr_accessor :color
+  attr_reader :year
 
   def initialize(year, color, model)
     @year = year
@@ -20,20 +24,16 @@ class MyCar
     @speed += number
   end
 
-  def break(number)
+  def brake(number)
     @speed -= number
   end
 
-  def shut_down(number)
+  def shut_down
     @speed = 0
   end
 
-  def color_change(color)
-    @color = color
-  end
-
   def current_speed
-    puts "You are now going #{@current_speed} km/h."
+    puts "You are now going #{@speed} km/h."
   end
 end
 
@@ -48,3 +48,6 @@ lumina.brake(20)
 lumina.current_speed
 lumina.shut_down
 lumina.current_speed
+lumina.color = 'black'
+puts lumina.color
+puts lumina.year
