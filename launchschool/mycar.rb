@@ -15,11 +15,13 @@ Create a method called spray_paint that can be called on an object and will modi
 
         Classes and Objects II
 1. Add a class method to your MyCar class that calculates the gas mileage of any car.
+
+2. Override the to_s method to create a user friendly print out of your object.
 =end
 
 
 class MyCar
-  attr_accessor :color
+  attr_accessor :color, :model
   attr_reader :year
 
   def initialize(year, color, model)
@@ -53,6 +55,10 @@ class MyCar
     puts "#{miles / gallons} miles per gallon of gas"
   end
 
+  def to_s
+    "This car is a #{model} and it is from #{year}."
+  end
+
 end
 
 lumina = MyCar.new(1997, 'white', 'chevy lumina')
@@ -72,3 +78,4 @@ puts lumina.year
 lumina.spray_paint('red')
 puts lumina.color
 MyCar.gas_mileage(13, 351)
+puts lumina.to_s
